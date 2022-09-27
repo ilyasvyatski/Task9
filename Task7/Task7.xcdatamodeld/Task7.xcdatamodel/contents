@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ItemEntity" representedClassName="ItemEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ItemEntity" inverseName="parent" inverseEntity="ItemEntity"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="children" inverseEntity="ItemEntity"/>
+    </entity>
+    <entity name="PictureEntity" representedClassName="PictureEntity" parentEntity="ItemEntity" syncable="YES">
+        <attribute name="lines" optional="YES" attributeType="Transformable"/>
+        <relationship name="record" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RecordEntity" inverseName="picture" inverseEntity="RecordEntity"/>
+    </entity>
+    <entity name="RecordEntity" representedClassName="RecordEntity" parentEntity="ItemEntity" syncable="YES">
+        <relationship name="picture" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PictureEntity" inverseName="record" inverseEntity="PictureEntity"/>
+    </entity>
+    <elements>
+        <element name="ItemEntity" positionX="-5839.30078125" positionY="-9797.765625" width="128" height="103"/>
+        <element name="PictureEntity" positionX="-5564.92578125" positionY="-9718.51171875" width="128" height="73"/>
+        <element name="RecordEntity" positionX="-6104.15625" positionY="-9658.30078125" width="128" height="58"/>
+    </elements>
+</model>
