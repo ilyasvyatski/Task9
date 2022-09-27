@@ -17,4 +17,8 @@ public class PictureEntity: ItemEntity {
         super.awakeFromInsert()
         lines = [Line]()
     }*/
+    
+    /*func appendLines(<#parameters#>) {
+
+    }*/
 }

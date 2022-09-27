@@ -90,7 +90,6 @@ class DataProvider {
             let backgroundContextItem = backgroundContext.object(with: item!.objectID) as! ItemEntity
             
             backgroundContextItem.title = newTitle
-            //CoreDataStack.shared.printThreadStats()
             
             do {
                 try backgroundContext.save()
